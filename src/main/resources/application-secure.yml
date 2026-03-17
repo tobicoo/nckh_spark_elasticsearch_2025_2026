@@ -1,0 +1,23 @@
+server:
+  port: 8083
+  ssl:
+    enabled: true
+    key-store: classpath:keystore.p12
+    key-store-password: changeit
+    key-store-type: PKCS12
+
+app:
+  elasticsearch:
+    enabled: true
+    url: https://localhost:9200
+    index: medical_records
+    timeout-seconds: 5
+    username: elastic
+    password: changeit
+    ca-cert-path: ./certs/ca/ca.crt
+  spark:
+    enabled: true
+    submit: scripts/spark-submit-wrapper.cmd
+    master: local[*]
+    job-jar: ./spark-jobs/target/record-reindex-job.jar
+    app-name: hospital-reindex-job

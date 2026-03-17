@@ -1,0 +1,12 @@
+target/
+*.log
+*.zip
+*.jks
+*.crt
+*.p12
+.idea/
+.vscode/
+node_modules/
+frontend/node_modules/
+.env
+*.mkv
